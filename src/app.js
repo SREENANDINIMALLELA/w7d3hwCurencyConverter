@@ -4,19 +4,24 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     data: {
       rates:[],
-      startCurrency:"",
-      endCurrency:0,
-      beforeconvertion:0,
-      afterconvertion:0,
+      convertionRate:0,
+      eroAmount:0,
+      selectedForeignRate:0,
+
+      foreignAmount:0,
     },
     mounted(){
         this.fetchRates()
       },
     computed: {
         convertFromEuros: function() {
-          const euroConversion = this.startCurrency*this.beforeconvertion
+          const euroConversion = this.convertionRate*this.eroAmount
            return euroConversion.toFixed(2)
       },
+      convertToEuros: function() {
+        const euroConversion = this.foreignAmount/this.selectedForeignRate
+         return euroConversion.toFixed(2)
+    },
     },
     methods:{
       fetchRates: function(){

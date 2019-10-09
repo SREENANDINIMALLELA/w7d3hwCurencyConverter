@@ -8,32 +8,28 @@
   <body>
     <div id="app">
       <h1>Curreny Converter</h1>
-
       <tr>
         <td>
           <label>Enter Ero amount</label>
-          <input type="text" id="amount"  v-model.number="beforeconvertion" required></td>
+          <input type="number" id="amount"  v-model.number="eroAmount" required></td>
         <td>
-          <select v-model="startCurrency">
+          <select v-model="convertionRate">
           <option v-for="(value, name) in rates" :value = "value">{{name}}
           </option>
         </select>
-        <span>Convertion Rate:{{convertFromEuros}}</span>
-      </td>
-      <!-- <select v-model="selected">
-  <option disabled value="">Please select one</option>
-  <option>A</option>
-  <option>B</option>
-  <option>C</option>
-</select>
-<span>Selected: {{ selected }}</span> -->
-      <!-- </tr>
+        <span v-if ="convertionRate">After Convertion:{{convertFromEuros}}</span>
+        </td>
+        </tr>
+        <br>
       <tr>
-        <td><input type="text" id="amount" placeholder="Enter the Ero amount" v-model.number="amountr" required></td>
-        <td><select class="" name="">
+        <label>select currency </label>
+        <td><input type="number" id="amount" placeholder="Enter the Ero amount" v-model.number="foreignAmount" required></td>
+        <td><select v-model="selectedForeignRate">
           <option v-for="(value, name) in rates" :value="value">{{name}}</option>
         </select></td>
-      </tr> -->
+
+        <span v-if="selectedForeignRate">After Convertion to Ero:{{convertToEuros}}</span>
+      </tr>
     </div>
   </body>
 </html>
