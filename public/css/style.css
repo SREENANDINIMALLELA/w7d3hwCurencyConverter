@@ -1,0 +1,14 @@
+#app {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  
+}
+td ,label{
+  color: blue;
+}
+body{
+  background-color: #A5C7D4;
+  line-height:3em;
+}

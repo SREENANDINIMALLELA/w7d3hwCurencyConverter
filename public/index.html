@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Currency Converter</title>
     <script src="./js/bundle.js"></script>
   </head>
@@ -22,7 +23,7 @@
         </tr>
         <br>
       <tr>
-        <label>select currency </label>
+        <label>Enter amount</label>
         <td><input type="number" id="amount" placeholder="Enter the Ero amount" v-model.number="foreignAmount" required></td>
         <td><select v-model="selectedForeignRate">
           <option v-for="(value, name) in rates" :value="value">{{name}}</option>
