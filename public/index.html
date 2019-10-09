@@ -7,7 +7,33 @@
   </head>
   <body>
     <div id="app">
+      <h1>Curreny Converter</h1>
 
+      <tr>
+        <td>
+          <label>Enter Ero amount</label>
+          <input type="text" id="amount"  v-model.number="beforeconvertion" required></td>
+        <td>
+          <select v-model="startCurrency">
+          <option v-for="(value, name) in rates" :value = "value">{{name}}
+          </option>
+        </select>
+        <span>Convertion Rate:{{convertFromEuros}}</span>
+      </td>
+      <!-- <select v-model="selected">
+  <option disabled value="">Please select one</option>
+  <option>A</option>
+  <option>B</option>
+  <option>C</option>
+</select>
+<span>Selected: {{ selected }}</span> -->
+      <!-- </tr>
+      <tr>
+        <td><input type="text" id="amount" placeholder="Enter the Ero amount" v-model.number="amountr" required></td>
+        <td><select class="" name="">
+          <option v-for="(value, name) in rates" :value="value">{{name}}</option>
+        </select></td>
+      </tr> -->
     </div>
   </body>
 </html>
